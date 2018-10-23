@@ -121,7 +121,42 @@ Anything else...
 //    (function(){
 //      console.log('this is an IIFEs');
 //    })();
-   
+
+// (function(name){
+//        console.log('Hello ' + name);
+// })('Henrique');
+
+// const todo = {
+//        add: function(){
+//            console.log('Add todo ...');
+//        },
+//        edit: function(){
+//            console.log('this is another function');
+//        }
+
+//     }
+
+// todo.add();
+// todo.edit();
+// todo.delete = function(){
+//     console.log('This is another function declaration test!');
+// }
+
+// todo.delete();
+
+for(let i = 0; i < 10; i++){
+    if(i === 2){
+        console.log('This is the loop number 2!');
+        continue;
+    }
+
+    if(i === 8){
+        console.log('GET TO THE CHOPPA!');
+        break;
+    }
+
+    console.log('number ' + i);
+}
    
 
 
