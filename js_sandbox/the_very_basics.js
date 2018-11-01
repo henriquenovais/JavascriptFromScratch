@@ -144,20 +144,23 @@ Anything else...
 
 // todo.delete();
 
-for(let i = 0; i < 10; i++){
-    if(i === 2){
-        console.log('This is the loop number 2!');
-        continue;
-    }
+// for(let i = 0; i < 10; i++){
+//     if(i === 2){
+//         console.log('This is the loop number 2!');
+//         continue;
+//     }
 
-    if(i === 8){
-        console.log('GET TO THE CHOPPA!');
-        break;
-    }
+//     if(i === 8){
+//         console.log('GET TO THE CHOPPA!');
+//         break;
+//     }
 
-    console.log('number ' + i);
-}
+//     console.log('number ' + i);
+// }
    
+// Window is a very important object that is a very special object which
+// uses a lot of things.
+// It has stuff like alert
 
 
 
