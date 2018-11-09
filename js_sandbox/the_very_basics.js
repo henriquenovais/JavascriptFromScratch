@@ -158,10 +158,55 @@ Anything else...
 //     console.log('number ' + i);
 // }
    
-// Window is a very important object that is a very special object which
-// uses a lot of things.
-// It has stuff like alert
+/*
+ Window is a very important object because it is the global object in client-side
+ javascript. Window is a standalone process on the client-side machine which that makes 
+ the user's computer system the main environment in NodeJS.
+ Since when programming the client-side and the server-side are on the same machine, the Window object 
+ will serve the same purpose but on different machines.
+ The Window object contains:
+ Fetch API
+ Navigator Object
+ Geolocation
+ Methods such as alert,prompt, confirm and console
 
+ In order to see the Window object at work just type "window" in the Google Chrome console since it has
+ the same JavaScript engine as NodeJS called v8.
+*/
+
+// WINDOW OBJECT
+
+// window.console.log(123); 
+// //Same thing as console.log because you already are accessing the window object
+// //since the window object is the main client-side object.
+// console.log(123);
+// window.alert("Here BOYZ!");
+// alert("Here!");
+
+// // Input some value
+// const input = prompt();
+// alert(input);
+
+// Confirm
+
+// if(confirm('Are you sure')){
+//     console.log('YES');
+// } else {
+//     console.log('GOD DAMMIT YOU ARE SUPPOSED TO SAY YES HERE BASTARD');
+// }
+
+let val, otherval;
+
+// //Outer height and width 
+// val = window.outerHeight;
+// otherval = window.outerWidth; 
+
+// Inner height and width
+val = window.outerHeight;
+otherval = window.outerWidth; 
+
+console.log(val);
+console.log(otherval);
 
 
 
