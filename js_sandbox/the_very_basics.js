@@ -195,7 +195,7 @@ Anything else...
 //     console.log('GOD DAMMIT YOU ARE SUPPOSED TO SAY YES HERE BASTARD');
 // }
 
-let val, otherval;
+// let val, otherval;
 
 // //Outer height and width 
 // val = window.outerHeight;
@@ -247,8 +247,26 @@ let val, otherval;
 
 // console.log(val);
 
+//Global Scope
+
+var a = 1;
+let b = 2;
+const c = 3;
+
+function test() {
+    var a = 4;
+    let b = 5;
+    const c = 6;
+
+    console.log('Function Scope', a, b, c);
+
+}
+
+test();
 
 
+
+console.log('Global Scope', a, b, c);
 
 
 
