@@ -254,6 +254,7 @@ let b = 2;
 const c = 3;
 
 function test() {
+    //Function Scope
     var a = 4;
     let b = 5;
     const c = 6;
@@ -264,9 +265,18 @@ function test() {
 
 test();
 
+if(true){
+    //Block Scope
+    var a = 10;
+    let b = 11;
+    const c = 12;
+    console.log('If Scope', a,b,c);
+}
 
-
+//Global Scope
 console.log('Global Scope', a, b, c);
+
+/* */
 
 
 
