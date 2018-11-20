@@ -1,49 +1,57 @@
-//The Document Object Model is the object that allows the programmer to access and modify the 
-//HTML file through JavaScript.
-
-/*The purpose of this code is to explore the document object in order to 
-mature manipulate its properties through vanilla JavaScript.*/ 
-
-let val;
+//DOM selectors are objects capable of manipuling the DOM.
 
 /*
-The following is written in order to explore the HTML
-through the document object.
+DOM selectors fall into two major categories:
+    Multiple element selectors
+    Single element selectors
 */ 
-val = document;
-val = document.all[2];
-val = document.all.length;
-val = document.body;
-val = document.doctype;
-val = document.domain;
-val = document.URL;
-val = document.characterSet;
-val = document.contentType;
 
-val = document.forms; //See the forms present in the document
-//Exploring the form in the HTML file:
+//Single Element Selectors
 
-val = document.forms[0];
-val = document.forms[0].id;
-val = document.forms[0].method;
-val = document.forms[0].action;    
+// document.getElementById();
 
-val = document.links;
-val = document.links[0];
-val = document.links[0].id;
-val = document.links[0].className;
-val = document.links[0].classList;
-val = document.links[0].classList[0];
+console.log(document.getElementById('task-title'));
 
-val = document.images;
-val = document.scripts;
-val = document.scripts[2].getAttribute('src');
+//Getting specific attributes from the element
+console.log(document.getElementById('task-title').id);
+console.log(document.getElementById('task-title').className);
 
-let scripts = document.scripts;
-let scriptsArr = Array.from(scripts);
+const taskTitle = document.getElementById('task-title');
 
-scriptsArr.forEach((script) => {
-    console.log(script.getAttribute('src'));
-});
+// Change Styling
+taskTitle.style.background = '#0AE';
+taskTitle.style.color = '#FFF';
+taskTitle.style.padding = '5px';
 
-console.log(val);
+// Change content
+taskTitle.textContent = 'Task List';
+taskTitle.innerText = 'My Tasks';
+taskTitle.innerHTML = '<span style="color:red">Task List</span>';
+
+//document.querySelector();
+/*
+ Much more powerful than getElementById().
+ This method allows the programmer to be able to select pretty much anything
+ through any kind of identifier.
+*/
+
+console.log(document.querySelector('#task-title')); // Select an element by its Id and print info on console
+console.log(document.querySelector('.card-titlte')); //Select an element by its class and print info on console
+console.log(document.querySelector('h5')); 
+/*
+Select an element by its tag() and print info on console.
+If there is more than one tag h5 the v8 will get back the first one.
+*/
+
+// document.querySelector('li').style.color = 'red'; //First item of tag "li"
+// document.querySelector('ul li').style.color = 'lime'; //A bit more specific
+
+// document.querySelector('li:last-child').style.color = 'purple'; //Last "li" tagged element
+// document.querySelector('li:first-child').style.color = 'orange'; //First "li" tagged element
+// document.querySelector('li:nth-child(3)').style.color = 'yellow'; //Third "li" tagged element
+// document.querySelector('li:nth-child(4)').textContent = 'Hello World!'; //Third "li" tagged element
+
+//In CSS 3 you can use odd and even as well to get the tagged attributes based on their parity
+document.querySelector('li:nth-child(odd)').style.color = 'yellow'; //Third "li" tagged element
+document.querySelector('li:nth-child(even)').style.color = 'lime'; //Third "li" tagged element
+
