@@ -102,32 +102,110 @@ and Multiple Elements Selectors as shown:
 // document.querySelectorAll
 /*This is the super powerful multiple items selector*/
 
-const taskList = document.querySelectorAll('ul.collection li.collection-item');
-console.log(taskList);
+// const taskList = document.querySelectorAll('ul.collection li.collection-item');
+// console.log(taskList);
 
-//The taskList object is a node list so it is not required 
-// to make a conversion to Array.
+// //The taskList object is a node list so it is not required 
+// // to make a conversion to Array.
 
- taskList.forEach((task,index) => {
-     task.textContent = `${index}: Hello`;
- });
+//  taskList.forEach((task,index) => {
+//      task.textContent = `${index}: Hello`;
+//  });
 
- const liEven = document.querySelectorAll('ul.collection li:nth-child(even)');
- const liOdd = document.querySelectorAll('ul.collection li:nth-child(odd)');
- console.log(liEven);
- console.log(liOdd);
+//  const liEven = document.querySelectorAll('ul.collection li:nth-child(even)');
+//  const liOdd = document.querySelectorAll('ul.collection li:nth-child(odd)');
+//  console.log(liEven);
+//  console.log(liOdd);
 
-//Used for loop to show a bit of a variation
-//No specific reason besides showing another way of using a HTML collection
-for(let i = 0; i < liEven.length; i++){
-    liEven[i].style.background = 'gold';
-    liEven[i].style.color = 'black';
-}
+// //Used for loop to show a bit of a variation
+// //No specific reason besides showing another way of using a HTML collection
+// for(let i = 0; i < liEven.length; i++){
+//     liEven[i].style.background = 'gold';
+//     liEven[i].style.color = 'black';
+// }
 
-liOdd.forEach((li) => {
-    li.style.background = 'black';
-    li.style.color = 'gold';
-});
+// liOdd.forEach((li) => {
+//     li.style.background = 'black';
+//     li.style.color = 'gold';
+// });
+
+//DOM Traversing
+/*
+To traverse a DOM is to navigate it through child elements.
+*/ 
+
+let val;
+
+const list = document.querySelector('ul.collection');
+const listItem = document.querySelector('li.collection-item:first-child');
+
+val = listItem;
+val = list;
+
+//Get child nodes
+val = list.childNodes;
+/*
+This method will return a Node list with all nodes within the
+specified tags, even the line breaks between the HTML tags.
+*/
+
+val = list.childNodes;
+// val = list.childNodes[0];
+// val = list.childNodes[0].nodeName;
+// val = list.childNodes[0].nodeType;
+
+/*
+Types of nodes:
+
+1 - Element
+2 - Attribute
+3 - Text Node
+8 - Comment
+9 - Document Itself
+10 - Doctype
+*/
+
+// //Get children element nodes
+// /*
+// Returns a HTML Collection with all the element nodes inside 
+// the specified tag. Will ignore the line breaks and other types of nodes.
+// */ 
+
+val = list.children;
+list.children[1].textContent = 'HELLO BUDDIES!';
+
+//Using the function again in order to get deeper
+//in the HTML body hierarchy:
+
+val = list.children[3].children;
+
+//Manipulation of first nodes
+val = list.firstChild; //Getting the first node
+val = list.firstElementChild //Getting the first element node
+
+//Manipulation of last nodes
+val = list.lastChild; //Getting the last node
+val = list.lastElementChild //Getting the last element node
+
+//Counting child elements 
+val = list.childElementCount;
+
+//Get parent node
+val = listItem.parentNode;
+
+//Get parent element
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement; //stacking methods to traverse is possible just the same as line 180
+
+//Get next sibling node
+val = listItem.nextSibling;
+val = listItem.nextSibling.nextSibling;
+
+//Get previous sibling node
+val = listItem.previousSibling;
+// val = listItem.nextSibling.previousSibling;
+
+console.log(val);
 
 
 
